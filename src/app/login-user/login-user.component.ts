@@ -27,7 +27,7 @@ export class LoginUserComponent {
     this.service.loginUser(data).subscribe({
       next: (res: any) => {
         console.log(res);
-
+        localStorage.setItem('user',JSON.stringify(res));
         this.auth.login(); 
         this.router.navigate(['/home']);
         this.loginForm.reset();
