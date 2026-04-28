@@ -1,1 +1,31 @@
-<p>user-details works!</p>
+<div class="container mt-4">
+
+  <div class="rounded-4">
+
+    <!-- Top Right User Section -->
+    <div class="d-flex justify-content-end align-items-center mb-4">
+
+      <!-- Notification -->
+      <i class="bi bi-bell-fill me-4 text-dark"></i>
+
+      <!-- User Logo -->
+      <img 
+        src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" 
+        width="45" 
+        height="45"
+        class="rounded-circle border me-2"
+      >
+
+      <!-- User Name -->
+      <span class="fw-bold me-3">{{ userName }}</span>
+
+      <!-- Logout -->
+      <button class="btn btn-outline-danger btn-sm" (click)="logout()">
+        <span >Logout</span>
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
