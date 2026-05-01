@@ -18,6 +18,6 @@ export class AccountServiceService {
   }
 
   getAccountById(id:any):Observable<any>{
-    return this.http.get(`${this.baseUrl}/getAccountById/${id}`);
+    return this.http.get(`${this.baseUrl}getAccountByUserId/${id}`);
   }
 }

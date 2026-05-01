@@ -6,14 +6,59 @@
         </div>
     </div>
 
-    <div>
-        @if (sectionSelected === 'create-account') {
-        <app-create-account></app-create-account>
-        }
+    <div class="container mt-4">
 
-        @if (sectionSelected === 'account-details') {
-            <h3>hello from user</h3>
-        }
-    </div>
+    @if (sectionSelected === 'create-account') {
+        <div class="card shadow border-0 rounded-4 p-4">
+            <h3 class="mb-4 text-primary">Create Account</h3>
+            <app-create-account></app-create-account>
+        </div>
+    }
+
+    @if (sectionSelected === 'account-details') {
+        <div class="card shadow border-0 rounded-4 p-4">
+            <h3 class="mb-4 text-success">User Account Details</h3>
+
+            @if (userData.length > 0) {
+
+                @for (account of userData; track $index) {
+                    <div class="border rounded-3 p-3 mb-3 bg-light">
+
+                        <div class="row">
+                            <div class="col-md-2">
+                                <p class="mb-2">
+                                    <strong>Id:</strong>
+                                    {{ account.id }}
+                                </p>
+                            </div>
+
+                            <div class="col-md-4">
+                                <p class="mb-2">
+                                    <strong>Account Number:</strong>
+                                    {{ account.accountNo }}
+                                </p>
+                            </div>
+
+                            <div class="col-md-4">
+                                <p class="mb-2">
+                                    <strong>Balance:</strong>
+                                    ₹{{ account.balance }}
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                }
+
+            } @else {
+                <div class="alert alert-warning text-center">
+                    No Account Found
+                </div>
+            }
+
+        </div>
+    }
+
+</div>
     
 </div>
