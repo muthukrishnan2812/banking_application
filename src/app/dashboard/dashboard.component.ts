@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { RouterLink, RouterLinkActive } from "@angular/router";
 
 @Component({
   selector: 'app-dashboard',
@@ -7,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent {
+
+  @Output() sectionSelected = new EventEmitter<String>();
+
+  activeSection: string = 'dashboard';
+
+  navigate(section:String){
+    this.sectionSelected.emit(section);
+  }
 
 }

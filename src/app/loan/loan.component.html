@@ -1,1 +1,103 @@
-<p>loan works!</p>
+<div class="container mt-5">
+    <div class="p-3 mb-4">
+        <div class="d-flex flex-wrap gap-2 justify-content-center">
+            <button class="btn btn-outline-primary">Apply Loan</button>
+            <button class="btn btn-outline-secondary">View Loans</button>
+            <button class="btn btn-outline-success">Check Loan</button>
+            <button class="btn btn-outline-danger">Remove Loan</button>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-7 col-lg-6 w-100">
+            <div class="card shadow-lg border-0 rounded-4">
+                
+                <!-- Card Header -->
+                <div class="card-header bg-primary text-white text-center rounded-top-4">
+                    <h3 class="mb-0">Apply Loan</h3>
+                </div>
+
+                <!-- Card Body -->
+                <div class="card-body p-4">
+
+                    <form [formGroup]="LoanForm" (ngSubmit)="applyLoan()">
+
+                        <!-- Loan Amount -->
+                        <div class="mb-3">
+                            <label for="amount" class="form-label fw-semibold">Loan Amount</label>
+                            <input 
+                                type="number" 
+                                class="form-control" 
+                                id="amount"
+                                formControlName="amount" 
+                                placeholder="Enter loan amount">
+                        </div>
+
+                        <!-- Apply Date -->
+                        <div class="mb-3">
+                            <label for="applyDate" class="form-label fw-semibold">Apply Date</label>
+                            <input 
+                                type="datetime-local" 
+                                class="form-control" 
+                                id="applyDate"
+                                formControlName="applyDate">
+                        </div>
+
+                        <!-- Approval Date -->
+                        <div class="mb-3">
+                            <label for="approvalDate" class="form-label fw-semibold">Approval Date</label>
+                            <input 
+                                type="datetime-local" 
+                                class="form-control" 
+                                id="approvalDate"
+                                formControlName="approvalDate">
+                        </div>
+
+                        <!-- Disbursement Date -->
+                        <div class="mb-3">
+                            <label for="disbursementDate" class="form-label fw-semibold">Disbursement Date</label>
+                            <input 
+                                type="datetime-local" 
+                                class="form-control" 
+                                id="disbursementDate"
+                                formControlName="disbursementDate">
+                        </div>
+
+                        <!-- Balance -->
+                        <div class="mb-3">
+                            <label for="balance" class="form-label fw-semibold">Balance</label>
+                            <input 
+                                type="number" 
+                                class="form-control" 
+                                id="balance"
+                                formControlName="balance" 
+                                placeholder="Enter balance amount">
+                        </div>
+
+                        <!-- Status -->
+                        <div class="mb-4">
+                            <label for="status" class="form-label fw-semibold">Status</label>
+                            <select 
+                                class="form-select" 
+                                id="status"
+                                formControlName="status">
+                                <option value="">Select Status</option>
+                                <option value="Pending">Pending</option>
+                                <option value="Approved">Approved</option>
+                                <option value="Rejected">Rejected</option>
+                            </select>
+                        </div>
+
+                        <!-- Button -->
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg rounded-3">
+                                Apply Loan
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

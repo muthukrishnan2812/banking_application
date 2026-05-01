@@ -1,9 +1,32 @@
 <div class="row">
-    <div class="col">
-        <app-dashboard></app-dashboard>
-    </div>
-    <div class="col-4"></div>
-    <div class="col">
-        <app-transaction></app-transaction>
-    </div>
+
+  <!-- Left Menu -->
+  <div class="col-md-3">
+    <app-dashboard (sectionSelected)="showSection($event)"></app-dashboard>
+  </div>
+
+  <!-- Main Content -->
+  <div class="col-md-6">
+
+    @if(activeSection === 'dashboard') {
+      <section class="mb-5">
+            <h2>Dashboard Section</h2>
+            <p>Welcome Banking Dashboard</p>
+        </section>
+    }
+
+    @if(activeSection === 'loan') {
+      <app-loan></app-loan>
+    }
+
+    @if(activeSection === 'accounts') {
+      <app-account></app-account>
+    }
+
+    @if(activeSection === 'transaction') {
+      <app-transaction></app-transaction>
+    }
+
+  </div>
+
 </div>
