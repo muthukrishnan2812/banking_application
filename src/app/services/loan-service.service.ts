@@ -10,7 +10,7 @@ export class LoanServiceService {
 
   constructor(private http: HttpClient) { }
 
-  private baseUrl = "http://localhost:8080/api/loan";
+  private baseUrl = "https://springboot-bankingapplication.onrender.com/api/loan";
 
 
   applyLoan(userId:number , loan:Loan){

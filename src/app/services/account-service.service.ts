@@ -8,7 +8,7 @@ import { Account } from '../model/Account';
 })
 export class AccountServiceService {
 
-  baseUrl = "http://localhost:8080/api/account/";
+  baseUrl = "https://springboot-bankingapplication.onrender.com/api/account/";
 
   constructor(private http:HttpClient) { }
 
